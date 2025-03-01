@@ -57,7 +57,7 @@ Name | Type | Description  | Required | Notes
 **event** | Option<**String**> | Event key, e.g. `2019ncwak`. |  |
 **country** | Option<**String**> | Capitalized country name, e.g. `USA` or `Canada`. |  |
 **state** | Option<**String**> | Capitalized two-letter state code, e.g. `NC`. |  |
-**district** | Option<**String**> | One of [`fma`, `fnc`, `fit`, `fin`, `fim`, `ne`, `chs`, `ont`, `pnw`, `pch`, `isr`] |  |
+**district** | Option<**String**> | One of [`fma`, `fnc`, `fsc`, `fit`, `fin`, `fim`, `ne`, `chs`, `ont`, `pnw`, `pch`, `isr`] |  |
 **r#type** | Option<**String**> | One of [`regional`, `district`, `district_cmp`, `cmp_division`, or `cmp_finals`]. |  |
 **week** | Option<**i32**> | Week of the competition season. 8 is CMP |  |
 **metric** | Option<**String**> | How to sort the returned values. Any column in the table is valid. |  |

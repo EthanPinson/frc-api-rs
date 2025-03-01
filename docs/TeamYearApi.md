@@ -56,7 +56,7 @@ Name | Type | Description  | Required | Notes
 **year** | Option<**i32**> | Four-digit year |  |
 **country** | Option<**String**> | Capitalized country name, e.g. `USA` or `Canada`. |  |
 **state** | Option<**String**> | Capitalized two-letter state code, e.g. `NC`. |  |
-**district** | Option<**String**> | One of [`fma`, `fnc`, `fit`, `fin`, `fim`, `ne`, `chs`, `ont`, `pnw`, `pch`, `isr`] |  |
+**district** | Option<**String**> | One of [`fma`, `fnc`, `fsc`, `fit`, `fin`, `fim`, `ne`, `chs`, `ont`, `pnw`, `pch`, `isr`] |  |
 **metric** | Option<**String**> | How to sort the returned values. Any column in the table is valid. |  |
 **ascending** | Option<**bool**> | Whether to sort the returned values in ascending order. Default is ascending |  |
 **limit** | Option<**i32**> | Maximum number of events to return. Default is 1000. |  |
