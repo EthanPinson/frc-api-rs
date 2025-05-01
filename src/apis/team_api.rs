@@ -33,7 +33,7 @@ pub enum ReadTeamsV3TeamsGetError {
 
 
 /// Returns a single Team object. Requires a team number (no prefix).
-pub async fn read_team_v3_team_team_get(configuration: &configuration::Configuration, team: i32) -> Result<serde_json::Value, Error<ReadTeamV3TeamTeamGetError>> {
+pub async fn read_team_v3_team_team_get(configuration: &configuration::Configuration, team: i32) -> Result<std::collections::HashMap<String, serde_json::Value>, Error<ReadTeamV3TeamTeamGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_team = team;
 
@@ -60,7 +60,7 @@ pub async fn read_team_v3_team_team_get(configuration: &configuration::Configura
 }
 
 /// Returns up to 1000 teams at a time. Specify limit and offset to page through results.
-pub async fn read_teams_v3_teams_get(configuration: &configuration::Configuration, country: Option<&str>, state: Option<&str>, district: Option<&str>, active: Option<bool>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<serde_json::Value>, Error<ReadTeamsV3TeamsGetError>> {
+pub async fn read_teams_v3_teams_get(configuration: &configuration::Configuration, country: Option<&str>, state: Option<&str>, district: Option<&str>, active: Option<bool>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<std::collections::HashMap<String, serde_json::Value>>, Error<ReadTeamsV3TeamsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_country = country;
     let p_state = state;

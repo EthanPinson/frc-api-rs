@@ -33,7 +33,7 @@ pub enum ReadYearsV3YearsGetError {
 
 
 /// Returns a single Year object. Requires a four-digit year, e.g. `2019`.
-pub async fn read_year_v3_year_year_get(configuration: &configuration::Configuration, year: i32) -> Result<serde_json::Value, Error<ReadYearV3YearYearGetError>> {
+pub async fn read_year_v3_year_year_get(configuration: &configuration::Configuration, year: i32) -> Result<std::collections::HashMap<String, serde_json::Value>, Error<ReadYearV3YearYearGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_year = year;
 
@@ -59,7 +59,7 @@ pub async fn read_year_v3_year_year_get(configuration: &configuration::Configura
     }
 }
 
-pub async fn read_years_v3_years_get(configuration: &configuration::Configuration, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<serde_json::Value>, Error<ReadYearsV3YearsGetError>> {
+pub async fn read_years_v3_years_get(configuration: &configuration::Configuration, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<std::collections::HashMap<String, serde_json::Value>>, Error<ReadYearsV3YearsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_metric = metric;
     let p_ascending = ascending;

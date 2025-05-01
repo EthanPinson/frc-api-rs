@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## read_team_match_v3_team_match_team_match_get
 
-> serde_json::Value read_team_match_v3_team_match_team_match_get(team, r#match)
+> std::collections::HashMap<String, serde_json::Value> read_team_match_v3_team_match_team_match_get(team, r#match)
 Query a single team match
 
 Returns a single Team Match object. Requires a team number and match key, e.g. `5511` and `2019ncwak_f1m1`.
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**serde_json::Value**](serde_json::Value.md)
+[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ No authorization required
 
 ## read_team_matches_v3_team_matches_get
 
-> Vec<serde_json::Value> read_team_matches_v3_team_matches_get(team, year, event, week, r#match, elim, metric, ascending, limit, offset)
+> Vec<std::collections::HashMap<String, serde_json::Value>> read_team_matches_v3_team_matches_get(team, year, event, week, r#match, elim, metric, ascending, limit, offset)
 Query multiple team matches
 
 Returns up to 1000 team matches at a time. Specify limit and offset to page through results.
@@ -65,7 +65,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<serde_json::Value>**](serde_json::Value.md)
+[**Vec<std::collections::HashMap<String, serde_json::Value>>**](std::collections::HashMap.md)
 
 ### Authorization
 

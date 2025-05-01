@@ -33,7 +33,7 @@ pub enum ReadTeamEventsV3TeamEventsGetError {
 
 
 /// Returns a single Team Event object. Requires a team number and event key, e.g. `5511` and `2019ncwak`.
-pub async fn read_team_event_v3_team_event_team_event_get(configuration: &configuration::Configuration, team: i32, event: &str) -> Result<serde_json::Value, Error<ReadTeamEventV3TeamEventTeamEventGetError>> {
+pub async fn read_team_event_v3_team_event_team_event_get(configuration: &configuration::Configuration, team: i32, event: &str) -> Result<std::collections::HashMap<String, serde_json::Value>, Error<ReadTeamEventV3TeamEventTeamEventGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_team = team;
     let p_event = event;
@@ -61,7 +61,7 @@ pub async fn read_team_event_v3_team_event_team_event_get(configuration: &config
 }
 
 /// Returns up to 1000 team events at a time. Specify limit and offset to page through results.
-pub async fn read_team_events_v3_team_events_get(configuration: &configuration::Configuration, team: Option<i32>, year: Option<i32>, event: Option<&str>, country: Option<&str>, state: Option<&str>, district: Option<&str>, r#type: Option<&str>, week: Option<i32>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<serde_json::Value>, Error<ReadTeamEventsV3TeamEventsGetError>> {
+pub async fn read_team_events_v3_team_events_get(configuration: &configuration::Configuration, team: Option<i32>, year: Option<i32>, event: Option<&str>, country: Option<&str>, state: Option<&str>, district: Option<&str>, r#type: Option<&str>, week: Option<i32>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<std::collections::HashMap<String, serde_json::Value>>, Error<ReadTeamEventsV3TeamEventsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_team = team;
     let p_year = year;

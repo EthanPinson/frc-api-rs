@@ -33,7 +33,7 @@ pub enum ReadEventsV3EventsGetError {
 
 
 /// Returns a single Event object. Requires an event key, e.g. `2019ncwak`.
-pub async fn read_event_v3_event_event_get(configuration: &configuration::Configuration, event: &str) -> Result<serde_json::Value, Error<ReadEventV3EventEventGetError>> {
+pub async fn read_event_v3_event_event_get(configuration: &configuration::Configuration, event: &str) -> Result<std::collections::HashMap<String, serde_json::Value>, Error<ReadEventV3EventEventGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_event = event;
 
@@ -60,7 +60,7 @@ pub async fn read_event_v3_event_event_get(configuration: &configuration::Config
 }
 
 /// Returns up to 1000 events at a time. Specify limit and offset to page through results.
-pub async fn read_events_v3_events_get(configuration: &configuration::Configuration, year: Option<i32>, country: Option<&str>, state: Option<&str>, district: Option<&str>, r#type: Option<&str>, week: Option<i32>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<serde_json::Value>, Error<ReadEventsV3EventsGetError>> {
+pub async fn read_events_v3_events_get(configuration: &configuration::Configuration, year: Option<i32>, country: Option<&str>, state: Option<&str>, district: Option<&str>, r#type: Option<&str>, week: Option<i32>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<std::collections::HashMap<String, serde_json::Value>>, Error<ReadEventsV3EventsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_year = year;
     let p_country = country;

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## read_team_year_v3_team_year_team_year_get
 
-> serde_json::Value read_team_year_v3_team_year_team_year_get(team, year)
+> std::collections::HashMap<String, serde_json::Value> read_team_year_v3_team_year_team_year_get(team, year)
 Query a single team year
 
 Returns a single Team Year object. Requires a team number and year.
@@ -26,7 +26,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**serde_json::Value**](serde_json::Value.md)
+[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)
 
 ### Authorization
 
@@ -42,7 +42,7 @@ No authorization required
 
 ## read_team_years_v3_team_years_get
 
-> Vec<serde_json::Value> read_team_years_v3_team_years_get(team, year, country, state, district, metric, ascending, limit, offset)
+> Vec<std::collections::HashMap<String, serde_json::Value>> read_team_years_v3_team_years_get(team, year, country, state, district, metric, ascending, limit, offset)
 Query multiple team years
 
 Returns up to 1000 team years at a time. Specify limit and offset to page through results.
@@ -64,7 +64,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<serde_json::Value>**](serde_json::Value.md)
+[**Vec<std::collections::HashMap<String, serde_json::Value>>**](std::collections::HashMap.md)
 
 ### Authorization
 

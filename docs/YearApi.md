@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## read_year_v3_year_year_get
 
-> serde_json::Value read_year_v3_year_year_get(year)
+> std::collections::HashMap<String, serde_json::Value> read_year_v3_year_year_get(year)
 Query a single year
 
 Returns a single Year object. Requires a four-digit year, e.g. `2019`.
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**serde_json::Value**](serde_json::Value.md)
+[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ No authorization required
 
 ## read_years_v3_years_get
 
-> Vec<serde_json::Value> read_years_v3_years_get(metric, ascending, limit, offset)
+> Vec<std::collections::HashMap<String, serde_json::Value>> read_years_v3_years_get(metric, ascending, limit, offset)
 Query multiple years
 
 ### Parameters
@@ -56,7 +56,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<serde_json::Value>**](serde_json::Value.md)
+[**Vec<std::collections::HashMap<String, serde_json::Value>>**](std::collections::HashMap.md)
 
 ### Authorization
 

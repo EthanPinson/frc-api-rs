@@ -33,7 +33,7 @@ pub enum ReadMatchesV3MatchesGetError {
 
 
 /// Returns a single Match object. Requires a match key, e.g. `2019ncwak_f1m1`.
-pub async fn read_match_v3_match_match_get(configuration: &configuration::Configuration, r#match: &str) -> Result<serde_json::Value, Error<ReadMatchV3MatchMatchGetError>> {
+pub async fn read_match_v3_match_match_get(configuration: &configuration::Configuration, r#match: &str) -> Result<std::collections::HashMap<String, serde_json::Value>, Error<ReadMatchV3MatchMatchGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_match = r#match;
 
@@ -60,7 +60,7 @@ pub async fn read_match_v3_match_match_get(configuration: &configuration::Config
 }
 
 /// Returns up to 1000 matches at a time. Specify limit and offset to page through results.
-pub async fn read_matches_v3_matches_get(configuration: &configuration::Configuration, team: Option<i32>, year: Option<i32>, event: Option<&str>, week: Option<i32>, elim: Option<bool>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<serde_json::Value>, Error<ReadMatchesV3MatchesGetError>> {
+pub async fn read_matches_v3_matches_get(configuration: &configuration::Configuration, team: Option<i32>, year: Option<i32>, event: Option<&str>, week: Option<i32>, elim: Option<bool>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<std::collections::HashMap<String, serde_json::Value>>, Error<ReadMatchesV3MatchesGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_team = team;
     let p_year = year;

@@ -33,7 +33,7 @@ pub enum ReadTeamYearsV3TeamYearsGetError {
 
 
 /// Returns a single Team Year object. Requires a team number and year.
-pub async fn read_team_year_v3_team_year_team_year_get(configuration: &configuration::Configuration, team: i32, year: i32) -> Result<serde_json::Value, Error<ReadTeamYearV3TeamYearTeamYearGetError>> {
+pub async fn read_team_year_v3_team_year_team_year_get(configuration: &configuration::Configuration, team: i32, year: i32) -> Result<std::collections::HashMap<String, serde_json::Value>, Error<ReadTeamYearV3TeamYearTeamYearGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_team = team;
     let p_year = year;
@@ -61,7 +61,7 @@ pub async fn read_team_year_v3_team_year_team_year_get(configuration: &configura
 }
 
 /// Returns up to 1000 team years at a time. Specify limit and offset to page through results.
-pub async fn read_team_years_v3_team_years_get(configuration: &configuration::Configuration, team: Option<i32>, year: Option<i32>, country: Option<&str>, state: Option<&str>, district: Option<&str>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<serde_json::Value>, Error<ReadTeamYearsV3TeamYearsGetError>> {
+pub async fn read_team_years_v3_team_years_get(configuration: &configuration::Configuration, team: Option<i32>, year: Option<i32>, country: Option<&str>, state: Option<&str>, district: Option<&str>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<std::collections::HashMap<String, serde_json::Value>>, Error<ReadTeamYearsV3TeamYearsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_team = team;
     let p_year = year;

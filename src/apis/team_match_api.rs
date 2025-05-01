@@ -33,7 +33,7 @@ pub enum ReadTeamMatchesV3TeamMatchesGetError {
 
 
 /// Returns a single Team Match object. Requires a team number and match key, e.g. `5511` and `2019ncwak_f1m1`.
-pub async fn read_team_match_v3_team_match_team_match_get(configuration: &configuration::Configuration, team: i32, r#match: &str) -> Result<serde_json::Value, Error<ReadTeamMatchV3TeamMatchTeamMatchGetError>> {
+pub async fn read_team_match_v3_team_match_team_match_get(configuration: &configuration::Configuration, team: i32, r#match: &str) -> Result<std::collections::HashMap<String, serde_json::Value>, Error<ReadTeamMatchV3TeamMatchTeamMatchGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_team = team;
     let p_match = r#match;
@@ -61,7 +61,7 @@ pub async fn read_team_match_v3_team_match_team_match_get(configuration: &config
 }
 
 /// Returns up to 1000 team matches at a time. Specify limit and offset to page through results.
-pub async fn read_team_matches_v3_team_matches_get(configuration: &configuration::Configuration, team: Option<i32>, year: Option<i32>, event: Option<&str>, week: Option<i32>, r#match: Option<&str>, elim: Option<bool>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<serde_json::Value>, Error<ReadTeamMatchesV3TeamMatchesGetError>> {
+pub async fn read_team_matches_v3_team_matches_get(configuration: &configuration::Configuration, team: Option<i32>, year: Option<i32>, event: Option<&str>, week: Option<i32>, r#match: Option<&str>, elim: Option<bool>, metric: Option<&str>, ascending: Option<bool>, limit: Option<i32>, offset: Option<i32>) -> Result<Vec<std::collections::HashMap<String, serde_json::Value>>, Error<ReadTeamMatchesV3TeamMatchesGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_team = team;
     let p_year = year;

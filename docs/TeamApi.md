@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## read_team_v3_team_team_get
 
-> serde_json::Value read_team_v3_team_team_get(team)
+> std::collections::HashMap<String, serde_json::Value> read_team_v3_team_team_get(team)
 Query a single team
 
 Returns a single Team object. Requires a team number (no prefix).
@@ -25,7 +25,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**serde_json::Value**](serde_json::Value.md)
+[**std::collections::HashMap<String, serde_json::Value>**](serde_json::Value.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ No authorization required
 
 ## read_teams_v3_teams_get
 
-> Vec<serde_json::Value> read_teams_v3_teams_get(country, state, district, active, metric, ascending, limit, offset)
+> Vec<std::collections::HashMap<String, serde_json::Value>> read_teams_v3_teams_get(country, state, district, active, metric, ascending, limit, offset)
 Query multiple teams
 
 Returns up to 1000 teams at a time. Specify limit and offset to page through results.
@@ -62,7 +62,7 @@ Name | Type | Description  | Required | Notes
 
 ### Return type
 
-[**Vec<serde_json::Value>**](serde_json::Value.md)
+[**Vec<std::collections::HashMap<String, serde_json::Value>>**](std::collections::HashMap.md)
 
 ### Authorization
 
